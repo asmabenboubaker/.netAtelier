@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -50,6 +51,22 @@ namespace AM.applicationCore.Services
                     yield return flight.FightDate;
 
                 }
+            }
+        }
+        //q8
+        public void GetFlights(string filterType, string filterValue)
+        {
+            PropertyInfo property = typeof(Flight).GetProperty(filterType);
+            if (property == null)
+            {
+                Console.WriteLine("Invalid filter type");
+                return;
+            }
+
+            var filteredFlights = flights.Where(f => property.GetValue(f, null).ToString() == filterValue);
+            foreach (var flight in filteredFlights)
+            {
+                Console.WriteLine(flight.ToString());
             }
         }
     }
