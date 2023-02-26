@@ -1,5 +1,6 @@
 ﻿using AM.applicationCore;
 using AM.applicationCore.Services;
+using System.Security.Cryptography.X509Certificates;
 
 namespace AM.UI.Console
 {
@@ -70,6 +71,28 @@ namespace AM.UI.Console
 
             ServiceFlight sf = new ServiceFlight();
 
+            /// partie 2 
+            /// 
+            var flights = new List<Flight>
+    {
+        new Flight { Destination = "Paris", Departure = "New York", FightDate = new DateTime(2023, 03, 01), FlightId = 1, EffectiveArrival = new DateTime(2023, 03, 01, 16, 30, 0), EstimatedDuration = 8, Planee = plane },
+        new Flight { Destination = "Tokyo", Departure = "Los Angeles", FightDate = new DateTime(2023, 03, 05), FlightId = 2, EffectiveArrival = new DateTime(2023, 03, 06, 5, 30, 0), EstimatedDuration = 12, Planee = plane },
+        new Flight { Destination = "New York", Departure = "Paris", FightDate = new DateTime(2023, 03, 07), FlightId = 3, EffectiveArrival = new DateTime(2023, 03, 07, 13, 0, 0), EstimatedDuration = 7, Planee =plane },
+        new Flight { Destination = "London", Departure = "Los Angeles", FightDate = new DateTime(2023, 03, 10), FlightId = 4, EffectiveArrival = new DateTime(2023, 03, 11, 7, 30, 0), EstimatedDuration = 10, Planee = plane },
+        new Flight { Destination = "Hong Kong", Departure = "Sydney", FightDate = new DateTime(2023, 03, 15), FlightId = 5, EffectiveArrival = new DateTime(2023, 03, 15, 23, 0, 0), EstimatedDuration = 10, Planee = plane },
+        new Flight { Destination = "Sydney", Departure = "Hong Kong", FightDate = new DateTime(2023, 03, 18), FlightId = 6, EffectiveArrival = new DateTime(2023, 03, 19, 6, 30, 0), EstimatedDuration = 9, Planee = plane }
+    };
+            var destination = "Paris";
+            var dates = sf.GetFlightDatesa(destination);
+            System.Console.WriteLine($"Dates of flights to {destination}:");
+            foreach (var date in dates)
+            {
+                System.Console.WriteLine(date.ToShortDateString());
+            }
+          
         }
+        int x = 10;
+     //  x.add(10);
+
     }
 }

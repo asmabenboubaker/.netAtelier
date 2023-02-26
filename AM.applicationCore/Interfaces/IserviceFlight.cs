@@ -8,5 +8,7 @@ namespace AM.applicationCore.Interfaces
 {
     public class IserviceFlight
     {
+        public delegate void FlightDetailsDel(Plane plane);
+        public delegate double DurationAverageDel(string destination);
     }
 }

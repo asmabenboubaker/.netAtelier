@@ -10,3 +10,15 @@ D:\4twin\s2\.net\EmnaKhanfir\AM.applicationCore\obj\Debug\net6.0\AM.applicationC
 D:\4twin\s2\.net\EmnaKhanfir\AM.applicationCore\obj\Debug\net6.0\refint\AM.applicationCore.dll
 D:\4twin\s2\.net\EmnaKhanfir\AM.applicationCore\obj\Debug\net6.0\AM.applicationCore.pdb
 D:\4twin\s2\.net\EmnaKhanfir\AM.applicationCore\obj\Debug\net6.0\ref\AM.applicationCore.dll
+D:\4twin\s2\.net\Atelier\AM.applicationCore\bin\Debug\net6.0\AM.applicationCore.deps.json
+D:\4twin\s2\.net\Atelier\AM.applicationCore\bin\Debug\net6.0\AM.applicationCore.dll
+D:\4twin\s2\.net\Atelier\AM.applicationCore\bin\Debug\net6.0\AM.applicationCore.pdb
+D:\4twin\s2\.net\Atelier\AM.applicationCore\obj\Debug\net6.0\AM.applicationCore.csproj.AssemblyReference.cache
+D:\4twin\s2\.net\Atelier\AM.applicationCore\obj\Debug\net6.0\AM.applicationCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\4twin\s2\.net\Atelier\AM.applicationCore\obj\Debug\net6.0\AM.applicationCore.AssemblyInfoInputs.cache
+D:\4twin\s2\.net\Atelier\AM.applicationCore\obj\Debug\net6.0\AM.applicationCore.AssemblyInfo.cs
+D:\4twin\s2\.net\Atelier\AM.applicationCore\obj\Debug\net6.0\AM.applicationCore.csproj.CoreCompileInputs.cache
+D:\4twin\s2\.net\Atelier\AM.applicationCore\obj\Debug\net6.0\AM.applicationCore.dll
+D:\4twin\s2\.net\Atelier\AM.applicationCore\obj\Debug\net6.0\refint\AM.applicationCore.dll
+D:\4twin\s2\.net\Atelier\AM.applicationCore\obj\Debug\net6.0\AM.applicationCore.pdb
+D:\4twin\s2\.net\Atelier\AM.applicationCore\obj\Debug\net6.0\ref\AM.applicationCore.dll

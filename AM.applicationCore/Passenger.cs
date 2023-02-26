@@ -9,6 +9,7 @@ namespace AM.applicationCore
 {
     public class Passenger
     {
+        public int PassengerId { get; set; }
         public DateTime BirthDate { get; set; }
         public int PassportNumber { get; set; }
 
