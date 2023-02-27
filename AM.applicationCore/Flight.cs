@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AM.applicationCore
 {
+   // [(Table="vols")]
     public class Flight
     {
         public string Destination { get; set; }
@@ -16,8 +18,10 @@ namespace AM.applicationCore
         public int FlightId { get; set; }
         public DateTime EffectiveArrival { get; set; }
         public int EstimatedDuration { get; set; }
-
-        public Plane Planee { get; set; }
+        //[ForeignKey("PlaneId")] ou 
+        public Plane? Planee { get; set; }
+        [ForeignKey("Plane")]
+        public int? PlaneId { get; set; }//prop cle etrangere 
         public List<Passenger> Passengers { get; set; }
 
 

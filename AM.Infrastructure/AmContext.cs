@@ -1,4 +1,6 @@
 ﻿using AM.applicationCore;
+using AM.Infrastructure.confi;
+using AM.Infrastructure.Configurations;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -21,6 +23,23 @@ namespace AM.UI.Console
         {
             optionsBuilder.UseSqlServer(@"data source=(localdb)\mssqllocaldb;" +
                 "initial catalog=asmabenboubaker; integrated security=true");
+        }
+        
+        //configuration Fluent API
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            /*      // config cle primaire  ya bel les annotaions wala haka
+                  modelBuilder.Entity<Flight>().HasKey(f => f.FlightId);
+                  //change name of table 
+                  modelBuilder.Entity<Flight>().ToTable("voles");
+                  //config prop 
+                  modelBuilder.Entity<Passenger>().Property(f => f.FirstName).IsRequired()
+                      .HasMaxLength(50)
+                      .HasDefaultValue("name")
+                      .HasColumnType("nchar"); // nchar type sql */
+            modelBuilder.ApplyConfiguration(new PassangersConfiguration());
+            modelBuilder.ApplyConfiguration(new FlightConfiguration());
+            modelBuilder.ApplyConfiguration(new PlaneConfiguration());
         }
 
     }
