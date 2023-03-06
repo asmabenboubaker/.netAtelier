@@ -41,6 +41,9 @@ namespace AM.UI.Console
             modelBuilder.ApplyConfiguration(new FlightConfiguration());
             modelBuilder.ApplyConfiguration(new PlaneConfiguration());
         }
-
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.Properties<string>().HaveMaxLength(100).HaveColumnType("varchar");
+        }
     }
 }
