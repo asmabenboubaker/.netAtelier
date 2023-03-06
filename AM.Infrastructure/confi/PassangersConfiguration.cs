@@ -25,8 +25,14 @@ namespace AM.Infrastructure.Configurations
                 f.Property(a => a.FirstName).HasMaxLength(30).HasColumnName("PassFirstName");
                 f.Property(a => a.LastName).IsRequired().HasColumnName("PassLastName");
             });
+            // tph par defaut .net =>  heritage
+            //  
+            /*
+         
 
-
+           builder.HasDiscriminator<int>("isTravller").HasValue<Traveller>(2)
+                .HasValue<Staff>(0)
+                .HasValue<Passenger>(1);*/
         }
 
     }

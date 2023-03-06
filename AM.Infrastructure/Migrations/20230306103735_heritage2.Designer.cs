@@ -4,6 +4,7 @@ using AM.UI.Console;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AM.Infrastructure.Migrations
 {
     [DbContext(typeof(AmContext))]
-    partial class AmContextModelSnapshot : ModelSnapshot
+    [Migration("20230306103735_heritage2")]
+    partial class heritage2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -112,31 +115,19 @@ namespace AM.Infrastructure.Migrations
                     b.ToTable("myplaness", (string)null);
                 });
 
-            modelBuilder.Entity("AM.applicationCore.Ticket", b =>
+            modelBuilder.Entity("FlightPassenger", b =>
                 {
-                    b.Property<int>("FlightFK")
+                    b.Property<int>("PassengersPassportNumber")
                         .HasColumnType("int");
 
-                    b.Property<int>("PassengerFK")
+                    b.Property<int>("flightsFlightId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Prix")
-                        .HasPrecision(3, 2)
-                        .HasColumnType("float(3)");
+                    b.HasKey("PassengersPassportNumber", "flightsFlightId");
 
-                    b.Property<string>("Siege")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar");
+                    b.HasIndex("flightsFlightId");
 
-                    b.Property<bool>("VIP")
-                        .HasColumnType("bit");
-
-                    b.HasKey("FlightFK", "PassengerFK");
-
-                    b.HasIndex("PassengerFK");
-
-                    b.ToTable("Ticket");
+                    b.ToTable("myreservations", (string)null);
                 });
 
             modelBuilder.Entity("AM.applicationCore.Staff", b =>
@@ -214,23 +205,19 @@ namespace AM.Infrastructure.Migrations
                     b.Navigation("fullname");
                 });
 
-            modelBuilder.Entity("AM.applicationCore.Ticket", b =>
+            modelBuilder.Entity("FlightPassenger", b =>
                 {
-                    b.HasOne("AM.applicationCore.Flight", "flight")
-                        .WithMany("tickets")
-                        .HasForeignKey("FlightFK")
+                    b.HasOne("AM.applicationCore.Passenger", null)
+                        .WithMany()
+                        .HasForeignKey("PassengersPassportNumber")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("AM.applicationCore.Passenger", "passenger")
-                        .WithMany("tickets")
-                        .HasForeignKey("PassengerFK")
+                    b.HasOne("AM.applicationCore.Flight", null)
+                        .WithMany()
+                        .HasForeignKey("flightsFlightId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("flight");
-
-                    b.Navigation("passenger");
                 });
 
             modelBuilder.Entity("AM.applicationCore.Staff", b =>
@@ -249,16 +236,6 @@ namespace AM.Infrastructure.Migrations
                         .HasForeignKey("AM.applicationCore.Traveller", "PassportNumber")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("AM.applicationCore.Flight", b =>
-                {
-                    b.Navigation("tickets");
-                });
-
-            modelBuilder.Entity("AM.applicationCore.Passenger", b =>
-                {
-                    b.Navigation("tickets");
                 });
 
             modelBuilder.Entity("AM.applicationCore.Plane", b =>

@@ -4,6 +4,7 @@ using AM.UI.Console;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AM.Infrastructure.Migrations
 {
     [DbContext(typeof(AmContext))]
-    partial class AmContextModelSnapshot : ModelSnapshot
+    [Migration("20230306110853_manytopmany")]
+    partial class manytopmany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -120,6 +123,9 @@ namespace AM.Infrastructure.Migrations
                     b.Property<int>("PassengerFK")
                         .HasColumnType("int");
 
+                    b.Property<int>("FlightId")
+                        .HasColumnType("int");
+
                     b.Property<double>("Prix")
                         .HasPrecision(3, 2)
                         .HasColumnType("float(3)");
@@ -132,9 +138,14 @@ namespace AM.Infrastructure.Migrations
                     b.Property<bool>("VIP")
                         .HasColumnType("bit");
 
+                    b.Property<int>("passengerPassportNumber")
+                        .HasColumnType("int");
+
                     b.HasKey("FlightFK", "PassengerFK");
 
-                    b.HasIndex("PassengerFK");
+                    b.HasIndex("FlightId");
+
+                    b.HasIndex("passengerPassportNumber");
 
                     b.ToTable("Ticket");
                 });
@@ -218,13 +229,13 @@ namespace AM.Infrastructure.Migrations
                 {
                     b.HasOne("AM.applicationCore.Flight", "flight")
                         .WithMany("tickets")
-                        .HasForeignKey("FlightFK")
+                        .HasForeignKey("FlightId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("AM.applicationCore.Passenger", "passenger")
                         .WithMany("tickets")
-                        .HasForeignKey("PassengerFK")
+                        .HasForeignKey("passengerPassportNumber")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

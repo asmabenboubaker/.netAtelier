@@ -22,12 +22,12 @@ namespace AM.applicationCore
         public Plane? Planee { get; set; }
         [ForeignKey("Plane")]
         public int? PlaneId { get; set; }//prop cle etrangere 
-        public List<Passenger> Passengers { get; set; }
+        public List<Ticket> tickets { get; set; }
 
 
         public override string ToString()
         {
-            return $"{Destination},{Departure},{FightDate},{FlightId},{EffectiveArrival},{EstimatedDuration},{Planee},{Passengers}";
+            return $"{Destination},{Departure},{FightDate},{FlightId},{EffectiveArrival},{EstimatedDuration},{Planee}";
         }
     }
 }

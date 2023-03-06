@@ -128,18 +128,20 @@ namespace AM.applicationCore.Services
             return orderedFlights.ToList();
         }
         //q14
+        /*
         public List<Passenger> SeniorTravellers(Flight flight)
         {
+            
             return flight.Passengers
                 .OfType<Traveller>()
                 .OrderBy(t => t.BirthDate)
                 .Take(3)
                 .Cast<Passenger>()
                 .ToList();
-        }
+    }*/
 
-        //q15
-        public void DestinationGroupedFlights()
+    //q15
+    public void DestinationGroupedFlights()
         {
             var groups = flights.GroupBy(flight => flight.Destination);
 
