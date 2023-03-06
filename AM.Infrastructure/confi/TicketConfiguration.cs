@@ -16,6 +16,9 @@ namespace AM.Infrastructure.confi
         {
             // yaa config lena ya fel context toul 
             builder.HasKey(p => new { p.FlightFK, p.PassengerFK });
+            /* config cle etrangere yaa hethi yaa    [ ForeignKey("passenger")] el fe classe ticket  */
+            //builder.HasOne(t => t.Passenger).WithMany(p => p.tickets).HasForeignKey(p => p.PassengerFK);
+            //builder.HasOne(t => t.Flight).WithMany(p => p.tickets).HasForeignKey(p => p.FlightFK);
         }
     }
 }
