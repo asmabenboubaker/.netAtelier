@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AM.Infrastructure.Migrations
 {
     [DbContext(typeof(AmContext))]
-    [Migration("20230306082901_pre_convention")]
-    partial class pre_convention
+    [Migration("20230306084938_pre_convention3")]
+    partial class pre_convention3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -36,21 +36,21 @@ namespace AM.Infrastructure.Migrations
                     b.Property<string>("Departure")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varcar");
+                        .HasColumnType("varchar");
 
                     b.Property<string>("Destination")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varcar");
+                        .HasColumnType("varchar");
 
                     b.Property<DateTime>("EffectiveArrival")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<int>("EstimatedDuration")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("FightDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<int?>("PlaneId")
                         .HasColumnType("int");
@@ -72,17 +72,17 @@ namespace AM.Infrastructure.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PassportNumber"));
 
                     b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Discriminator")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varcar");
+                        .HasColumnType("varchar");
 
                     b.Property<string>("EmailAdress")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varcar");
+                        .HasColumnType("varchar");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -94,7 +94,7 @@ namespace AM.Infrastructure.Migrations
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varcar");
+                        .HasColumnType("varchar");
 
                     b.Property<int>("PassengerId")
                         .HasColumnType("int");
@@ -124,7 +124,7 @@ namespace AM.Infrastructure.Migrations
                         .HasColumnName("PlaneCapacity");
 
                     b.Property<DateTime>("ManufactureDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<int>("Planetype")
                         .HasColumnType("int");
@@ -154,7 +154,7 @@ namespace AM.Infrastructure.Migrations
                     b.HasBaseType("AM.applicationCore.Passenger");
 
                     b.Property<DateTime>("EmployementDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<int>("Salary")
                         .HasColumnType("int");
@@ -162,7 +162,7 @@ namespace AM.Infrastructure.Migrations
                     b.Property<string>("function")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varcar");
+                        .HasColumnType("varchar");
 
                     b.HasDiscriminator().HasValue("Staff");
                 });
@@ -174,12 +174,12 @@ namespace AM.Infrastructure.Migrations
                     b.Property<string>("Nationality")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varcar");
+                        .HasColumnType("varchar");
 
                     b.Property<string>("healthInformation")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("varcar");
+                        .HasColumnType("varchar");
 
                     b.HasDiscriminator().HasValue("Traveller");
                 });

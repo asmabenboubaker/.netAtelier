@@ -44,6 +44,8 @@ namespace AM.UI.Console
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {
             configurationBuilder.Properties<string>().HaveMaxLength(100).HaveColumnType("varchar");
+            configurationBuilder.Properties<DateTime>().HaveColumnType("date");
+            configurationBuilder.Properties<double>().HavePrecision(3, 2); //nombre chiffre avant , 3  et apres 2 
         }
     }
 }
