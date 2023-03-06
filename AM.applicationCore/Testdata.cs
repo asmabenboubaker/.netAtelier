@@ -37,9 +37,9 @@ namespace AM.applicationCore
                 return new List<Staff>()
                 {
                     new Staff()
-                    {
+                    {/*
                         FirstName="Caption",
-                        LastName="Caption",
+                        LastName="Caption",*/
                         EmailAdress="caption.cap@gmail.com",
                         BirthDate=new DateTime(1999,01,001),
                         Salary=9999
@@ -59,9 +59,9 @@ namespace AM.applicationCore
                 return new List<Traveller>()
             {
                 new Traveller()
-                {
+                {/*
                     FirstName="travller1",
-                    LastName="traveller1",
+                    LastName="traveller1",*/
                     EmailAdress="traveller@gmail.com",
                 BirthDate=new DateTime(1980,12,12),
                 Nationality="American"

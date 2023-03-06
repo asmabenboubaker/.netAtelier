@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AM.Infrastructure.Migrations
 {
     /// <inheritdoc />
-    public partial class fluentAPI6 : Migration
+    public partial class pre_convention : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +18,7 @@ namespace AM.Infrastructure.Migrations
                     PlaneId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PlaneCapacity = table.Column<int>(type: "int", nullable: false),
-                    ManufactureDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ManufactureDate = table.Column<DateTime>(type: "date", nullable: false),
                     Planetype = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -33,17 +33,17 @@ namespace AM.Infrastructure.Migrations
                     PassportNumber = table.Column<int>(type: "int", maxLength: 7, nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     PassengerId = table.Column<int>(type: "int", nullable: false),
-                    BirthDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EmailAdress = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FirstName = table.Column<string>(type: "nchar(80)", maxLength: 80, nullable: false, defaultValue: "name"),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    BirthDate = table.Column<DateTime>(type: "date", nullable: false),
+                    EmailAdress = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
                     TelNumber = table.Column<int>(type: "int", nullable: false),
-                    Discriminator = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EmployementDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    function = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Discriminator = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    PassFirstName = table.Column<string>(type: "varchar(30)", maxLength: 30, nullable: true),
+                    PassLastName = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
+                    EmployementDate = table.Column<DateTime>(type: "date", nullable: true),
+                    function = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
                     Salary = table.Column<int>(type: "int", nullable: true),
-                    healthInformation = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Nationality = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    healthInformation = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true),
+                    Nationality = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -56,10 +56,10 @@ namespace AM.Infrastructure.Migrations
                 {
                     FlightId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Destination = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Departure = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    FightDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EffectiveArrival = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Destination = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    Departure = table.Column<string>(type: "varchar(100)", maxLength: 100, nullable: false),
+                    FightDate = table.Column<DateTime>(type: "date", nullable: false),
+                    EffectiveArrival = table.Column<DateTime>(type: "date", nullable: false),
                     EstimatedDuration = table.Column<int>(type: "int", nullable: false),
                     PlaneId = table.Column<int>(type: "int", nullable: true)
                 },

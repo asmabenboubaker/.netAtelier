@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using Microsoft.EntityFrameworkCore;
 
 namespace AM.applicationCore
 {
@@ -22,11 +23,19 @@ namespace AM.applicationCore
         [EmailAddress]
         //[DataType(DataType.EmailAddress)] 
         public string EmailAdress { get; set;}
-        [MinLength(3, ErrorMessage =">3") , MaxLength(25,ErrorMessage ="<25") ]
-        public String FirstName { get; set; }
-        public string LastName { get; set; }
+       
+
+       
+        public FullName fullname;
+        /*  [MinLength(3, ErrorMessage = ">3"), MaxLength(25, ErrorMessage = "<25")]
+         * public String FirstName { get; set; }
+         public string LastName { get; set; }*/
         //[0-9]{,8} => 1,2 ..8
-        //[0-9]{8,} => 8.....
+        //[0-9]{8,} => 8..... 
+
+        /*
+         * 
+         */
         [RegularExpression("[0-9]{8}")]
         public int TelNumber { get; set; }
 
@@ -34,7 +43,7 @@ namespace AM.applicationCore
 
         public override string ToString()
         {
-            return $" {BirthDate},{PassportNumber},{EmailAdress},{FirstName},{LastName},{TelNumber}";
+            return $" {BirthDate},{PassportNumber},{EmailAdress},{TelNumber}";
         }
         /*  // q a 
         public bool CheckProfile(string firstName, string lastName)
@@ -48,14 +57,14 @@ namespace AM.applicationCore
         }
         */
         //q c 
-        public bool CheckProfile(string firstName, string lastName, string email = null)
+      /*  public bool CheckProfile(string firstName, string lastName, string email = null)
         {
             if (email != null)
                 return FirstName == firstName && LastName == lastName &&
                EmailAdress == email;
             else
                 return FirstName == firstName && LastName == lastName;
-        }
+        }*/
         // q 11 a
         public virtual void PassengerType()
         {
