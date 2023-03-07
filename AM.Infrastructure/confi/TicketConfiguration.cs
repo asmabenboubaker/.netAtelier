@@ -14,7 +14,7 @@ namespace AM.Infrastructure.confi
          
         public void Configure(EntityTypeBuilder<Ticket> builder)
         {
-            // yaa config lena ya fel context toul 
+            // config ou dans context 
             builder.HasKey(p => new { p.FlightFK, p.PassengerFK });
             /* config cle etrangere yaa hethi yaa    [ ForeignKey("passenger")] el fe classe ticket  */
             //builder.HasOne(t => t.Passenger).WithMany(p => p.tickets).HasForeignKey(p => p.PassengerFK);

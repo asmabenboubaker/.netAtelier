@@ -29,7 +29,7 @@ namespace AM.UI.Console
         //configuration Fluent API
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            /*      // config cle primaire  ya bel les annotaions wala haka
+            /*      // config cle primaire  ou les annotaions 
                   modelBuilder.Entity<Flight>().HasKey(f => f.FlightId);
                   //change name of table 
                   modelBuilder.Entity<Flight>().ToTable("voles");
@@ -42,7 +42,7 @@ namespace AM.UI.Console
             modelBuilder.ApplyConfiguration(new FlightConfiguration());
             modelBuilder.ApplyConfiguration(new PlaneConfiguration());
             modelBuilder.ApplyConfiguration(new TicketConfiguration());
-            // ya congi hethi yaa config fel passenger config
+            //  config ici ou  config dans passenger config
             /* modelBuilder.Entity<Passenger>().HasDiscriminator<int>("isTravller").HasValue<Traveller>(2)
                  .HasValue<Staff>(0)
                  .HasValue<Passenger>(1);*/
