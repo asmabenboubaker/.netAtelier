@@ -39,7 +39,9 @@ namespace AM.applicationCore
         [RegularExpression("[0-9]{8}")]
         public int TelNumber { get; set; }
 
-        public List<Ticket> tickets { get; set; }
+        public virtual List<Ticket> tickets { get; set; }
+
+        public List<Reservation> reservation { get; set; }
 
         public override string ToString()
         {

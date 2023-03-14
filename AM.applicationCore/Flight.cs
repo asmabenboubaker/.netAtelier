@@ -19,10 +19,10 @@ namespace AM.applicationCore
         public DateTime EffectiveArrival { get; set; }
         public int EstimatedDuration { get; set; }
         //[ForeignKey("PlaneId")] ou 
-        public Plane? Planee { get; set; }
+        public virtual Plane? Planee { get; set; }
         [ForeignKey("Plane")]
         public int? PlaneId { get; set; }//prop cle etrangere 
-        public List<Ticket> tickets { get; set; }
+        public virtual List<Ticket> tickets { get; set; }
 
 
         public override string ToString()

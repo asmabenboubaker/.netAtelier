@@ -33,6 +33,8 @@ namespace AM.Infrastructure.Configurations
            builder.HasDiscriminator<int>("isTravller").HasValue<Traveller>(2)
                 .HasValue<Staff>(0)
                 .HasValue<Passenger>(1);*/
+
+
         }
 
     }

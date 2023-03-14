@@ -15,7 +15,7 @@ namespace AM.applicationCore
         public DateTime ManufactureDate { get; set; }
         public int PlaneId { get; set; }
          public PlaneType Planetype { get; set; }
-        public List<Flight> Flights { get; set; }
+        public virtual List<Flight> Flights { get; set; }
         public override string ToString()
         {
             return $"{Capacity},{ManufactureDate},{PlaneId},{Planetype},{Flights}";

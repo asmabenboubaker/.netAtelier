@@ -19,8 +19,8 @@ namespace AM.applicationCore
         public bool VIP { get; set; }
         //relation many to many
 
-        public Flight flight { get; set; }
-        public Passenger passenger { get; set; }
+        public virtual Flight flight { get; set; }
+        public virtual Passenger passenger { get; set; }
         
     }
 }

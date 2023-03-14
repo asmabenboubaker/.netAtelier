@@ -8,10 +8,10 @@ namespace AM.UI.Console
     {
         static void Main(string[] args)
         {
-            //int? a = null;
-            string? nom= System.Console.ReadLine();
-            System.Console.WriteLine("Bonjour "+nom);
-            int ageValue=-1;
+            ////int? a = null;
+            //string? nom= System.Console.ReadLine();
+            //System.Console.WriteLine("Bonjour "+nom);
+            //int ageValue=-1;
             //while (ageValue == -1)
             //{
             //    var age = System.Console.ReadLine();
@@ -50,49 +50,75 @@ namespace AM.UI.Console
 
 
 
-            Plane plane = new Plane();
-            plane.PlaneId = 0;
-            plane.Capacity = 0;
-            plane.ManufactureDate = DateTime.Now;
-            plane.Capacity = 10;
+            //Plane plane = new Plane();
+            //plane.PlaneId = 0;
+            //plane.Capacity = 0;
+            //plane.ManufactureDate = DateTime.Now;
+            //plane.Capacity = 10;
 
-            System.Console.WriteLine("q7=" + plane);
+            //System.Console.WriteLine("q7=" + plane);
 
             //q 9
             /*
             Plane plane2 = new Plane(0, 10, DateTime.Now);
             System.Console.WriteLine("q8=" + plane2); */
-            Plane plane3 = new Plane
-            {
-                Planetype = PlaneType.Airbus,
-                Capacity = 150,
-                ManufactureDate = new DateTime(2015, 02, 03)
-            };
+            //Plane plane3 = new Plane
+            //{
+            //    Planetype = PlaneType.Airbus,
+            //    Capacity = 150,
+            //    ManufactureDate = new DateTime(2015, 02, 03)
+            //};
 
-            ServiceFlight sf = new ServiceFlight();
+            //ServiceFlight sf = new ServiceFlight();
 
             /// partie 2 
             /// 
-            var flights = new List<Flight>
-    {
-        new Flight { Destination = "Paris", Departure = "New York", FightDate = new DateTime(2023, 03, 01), FlightId = 1, EffectiveArrival = new DateTime(2023, 03, 01, 16, 30, 0), EstimatedDuration = 8, Planee = plane },
-        new Flight { Destination = "Tokyo", Departure = "Los Angeles", FightDate = new DateTime(2023, 03, 05), FlightId = 2, EffectiveArrival = new DateTime(2023, 03, 06, 5, 30, 0), EstimatedDuration = 12, Planee = plane },
-        new Flight { Destination = "New York", Departure = "Paris", FightDate = new DateTime(2023, 03, 07), FlightId = 3, EffectiveArrival = new DateTime(2023, 03, 07, 13, 0, 0), EstimatedDuration = 7, Planee =plane },
-        new Flight { Destination = "London", Departure = "Los Angeles", FightDate = new DateTime(2023, 03, 10), FlightId = 4, EffectiveArrival = new DateTime(2023, 03, 11, 7, 30, 0), EstimatedDuration = 10, Planee = plane },
-        new Flight { Destination = "Hong Kong", Departure = "Sydney", FightDate = new DateTime(2023, 03, 15), FlightId = 5, EffectiveArrival = new DateTime(2023, 03, 15, 23, 0, 0), EstimatedDuration = 10, Planee = plane },
-        new Flight { Destination = "Sydney", Departure = "Hong Kong", FightDate = new DateTime(2023, 03, 18), FlightId = 6, EffectiveArrival = new DateTime(2023, 03, 19, 6, 30, 0), EstimatedDuration = 9, Planee = plane }
-    };
-            var destination = "Paris";
-            var dates = sf.GetFlightDatesa(destination);
-            System.Console.WriteLine($"Dates of flights to {destination}:");
-            foreach (var date in dates)
-            {
-                System.Console.WriteLine(date.ToShortDateString());
-            }
-          
-        }
-        int x = 10;
-     //  x.add(10);
+            //        var flights = new List<Flight>
+            //{
+            //    new Flight { Destination = "Paris", Departure = "New York", FightDate = new DateTime(2023, 03, 01), FlightId = 1, EffectiveArrival = new DateTime(2023, 03, 01, 16, 30, 0), EstimatedDuration = 8, Planee = plane },
+            //    new Flight { Destination = "Tokyo", Departure = "Los Angeles", FightDate = new DateTime(2023, 03, 05), FlightId = 2, EffectiveArrival = new DateTime(2023, 03, 06, 5, 30, 0), EstimatedDuration = 12, Planee = plane },
+            //    new Flight { Destination = "New York", Departure = "Paris", FightDate = new DateTime(2023, 03, 07), FlightId = 3, EffectiveArrival = new DateTime(2023, 03, 07, 13, 0, 0), EstimatedDuration = 7, Planee =plane },
+            //    new Flight { Destination = "London", Departure = "Los Angeles", FightDate = new DateTime(2023, 03, 10), FlightId = 4, EffectiveArrival = new DateTime(2023, 03, 11, 7, 30, 0), EstimatedDuration = 10, Planee = plane },
+            //    new Flight { Destination = "Hong Kong", Departure = "Sydney", FightDate = new DateTime(2023, 03, 15), FlightId = 5, EffectiveArrival = new DateTime(2023, 03, 15, 23, 0, 0), EstimatedDuration = 10, Planee = plane },
+            //    new Flight { Destination = "Sydney", Departure = "Hong Kong", FightDate = new DateTime(2023, 03, 18), FlightId = 6, EffectiveArrival = new DateTime(2023, 03, 19, 6, 30, 0), EstimatedDuration = 9, Planee = plane }
+            //};
+            //        var destination = "Paris";
+            //        var dates = sf.GetFlightDatesa(destination);
+            //        System.Console.WriteLine($"Dates of flights to {destination}:");
+            //        foreach (var date in dates)
+            //        {
+            //            System.Console.WriteLine(date.ToShortDateString());
+            //        }
 
+            //    }
+            //    int x = 10;
+            //  x.add(10);
+
+            // add flight 
+           var am = new AmContext();
+            //am.Flights.Add(new Flight()
+            //{
+            //    Departure = "Tunis",
+            //    Destination = "Sousse",
+            //    FightDate = new DateTime(22, 2, 2),
+            //    EffectiveArrival = DateTime.Now,
+            //    EstimatedDuration = 1,
+            //    Planee = new Plane()
+            //    {
+            //        Capacity = 15,
+            //        ManufactureDate = DateTime.Now,
+            //        Planetype = PlaneType.Boing
+            //    }
+            //});
+            /*
+            foreach (var item in am.Flights.ToList())
+            {
+                System.Console.WriteLine(" affiche item "+item.FlightId+item.Planee.Capacity);
+            }
+            am.SaveChanges();
+            */
+
+        }
+    
     }
 }

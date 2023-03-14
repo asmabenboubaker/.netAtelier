@@ -24,6 +24,7 @@ namespace AM.UI.Console
         {
             optionsBuilder.UseSqlServer(@"data source=(localdb)\mssqllocaldb;" +
                 "initial catalog=asmabenboubaker; integrated security=true");
+            //optionsBuilder.UseLazyLoadingProxies();
         }
         
         //configuration Fluent API
@@ -54,6 +55,14 @@ namespace AM.UI.Console
             //
             // config key dans table ticket
             modelBuilder.Entity<Ticket>().HasKey(p => new { p.FlightFK, p.PassengerFK });
+            modelBuilder.Entity<Reservation>().HasKey(p => new { p.SeatFK, p.PassengerFK });
+
+            // one to many section seat 
+            modelBuilder.Entity<Seat>()
+                .HasOne(s => s.Section)
+                .WithMany(s => s.Seats)
+                .HasForeignKey(s => s.SectionFK)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
