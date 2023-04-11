@@ -1,5 +1,6 @@
 ﻿using AM.applicationCore.Interfaces;
 using AM.ApplicationCore.Interfaces;
+using AM.ApplicationCore.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,41 +13,10 @@ using static AM.applicationCore.Interfaces.IserviceFlight;
 namespace AM.applicationCore.Services
 {
 
-    public class ServiceFlight : IserviceFlight, IService<Flight>
+    public class ServiceFlight : Service<Flight>, IserviceFlight 
     {
-        public void Add(Flight entity)
+        public ServiceFlight(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-            throw new NotImplementedException();
-        }
-
-        public void Commit()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Flight entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete(Expression<Func<Flight, bool>> where)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Flight Get(Expression<Func<Flight, bool>> where)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Flight> GetAll()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Flight GetById(params object[] id)
-        {
-            throw new NotImplementedException();
         }
 
         //    public readonly IUnitOfWork uow;

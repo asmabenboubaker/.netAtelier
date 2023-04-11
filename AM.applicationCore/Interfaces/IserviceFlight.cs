@@ -12,6 +12,6 @@ namespace AM.applicationCore.Interfaces
     public interface IserviceFlight: IService<Flight>
     {
      
-        public IList<Flight> GetFlight(int n);
+       // public IList<Flight> GetFlight(int n);
     }
 }

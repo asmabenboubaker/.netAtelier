@@ -18,10 +18,15 @@ namespace AM.applicationCore.Services
             DateTime tenYearsAgo = DateTime.Now.AddYears(-10);
 
 
-            var planesToDelete =GetAll().Where(p => p.ManufactureDate < tenYearsAgo).ToList();
-            foreach (var plane in planesToDelete)
+            //var planesToDelete =GetAll().Where(p => p.ManufactureDate < tenYearsAgo).ToList();
+            //foreach (var plane in planesToDelete)
+            //{
+            //     Delete(plane);
+            //}
+            var list = GetAll().Where(p => (DateTime.Now - p.ManufactureDate).TotalDays > 10 * 360);
+            foreach (var plane in list)
             {
-                 Delete(plane);
+                Delete(plane);
             }
             Commit();
             return true;
