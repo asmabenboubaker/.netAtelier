@@ -11,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IserviceFlight, ServiceFlight>();
+builder.Services.AddScoped<IServicePlane, ServicePlan>();
 builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
 builder.Services.AddDbContext<DbContext,AmContext>();
 builder.Services.AddSingleton<Type>(T=>typeof(GenericRepository<>));
