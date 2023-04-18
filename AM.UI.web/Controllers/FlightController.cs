@@ -1,5 +1,6 @@
 ﻿using AM.applicationCore;
 using AM.applicationCore.Interfaces;
+using AM.applicationCore.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -17,9 +18,13 @@ namespace AM.UI.web.Controllers
             this.servicePlane = servicePlane;
         }
         // GET: FlightController
-        public ActionResult Index()
+        public ActionResult Index(string destination)
         {
-            var list=IserviceFlight.GetAll();
+
+            var list = IserviceFlight.GetAll();
+            if (destination != null) {
+            list=list.Where(f => f.Destination.Contains(destination)).ToList();
+            }
             return View(list);
         }
 
@@ -39,10 +44,14 @@ namespace AM.UI.web.Controllers
         // POST: FlightController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Flight collection)
+        public ActionResult Create(Flight collection, IFormFile piloteFile)
         {
             try
             {
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "NewFolder",piloteFile.FileName);
+                var stream = new FileStream(path, FileMode.Create);
+                piloteFile.CopyTo(stream);
+                collection.Pilote = piloteFile.FileName;
                 IserviceFlight.Add(collection);
                 IserviceFlight.Commit();
                 return RedirectToAction(nameof(Index));
@@ -95,5 +104,11 @@ namespace AM.UI.web.Controllers
                 return View();
             }
         }
+        //[HttpPost]
+        //public ActionResult Index(string destination)
+        //{
+        //    return View("index",IserviceFlight.GetAll().Where(f=>f.Destination.Contains(destination)));
+        //}
+
     }
 }

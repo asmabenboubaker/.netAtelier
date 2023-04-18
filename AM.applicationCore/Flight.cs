@@ -23,6 +23,7 @@ namespace AM.applicationCore
         [ForeignKey("Plane")]
         public int? PlaneId { get; set; }//prop cle etrangere 
         public virtual List<Ticket> tickets { get; set; }
+        public string Pilote { get; set; }
 
 
         public override string ToString()
