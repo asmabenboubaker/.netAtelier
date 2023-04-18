@@ -26,7 +26,7 @@ namespace AM.applicationCore
        
 
        
-        public FullName fullname;
+        public FullName fullname { get; set; }
         /*  [MinLength(3, ErrorMessage = ">3"), MaxLength(25, ErrorMessage = "<25")]
          * public String FirstName { get; set; }
          public string LastName { get; set; }*/
@@ -41,7 +41,7 @@ namespace AM.applicationCore
 
         public virtual List<Ticket> tickets { get; set; }
 
-        public List<Reservation> reservation { get; set; }
+        public virtual List<Reservation> reservation { get; set; }
 
         public override string ToString()
         {

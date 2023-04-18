@@ -67,8 +67,10 @@
                 @Html.DisplayFor(modelItem => item.EstimatedDuration)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PlaneId)
-            </td>
+            <partial name="_DetailsPlane" model="item.Planee" >
+               
+            </partial>
+                 </td>
             <td>
                 <img src="~/NewFolder/@item.Pilote" width="50" height="50"/>
                     </td>

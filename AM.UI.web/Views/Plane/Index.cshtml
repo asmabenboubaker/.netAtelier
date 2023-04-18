@@ -18,14 +18,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.ManufactureDate)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PlaneId)
-            </th>
+            
             <th>
                 @Html.DisplayNameFor(model => model.Planetype)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Information)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlaneId)
             </th>
             <th></th>
         </tr>
@@ -48,6 +49,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Information)
             </td>
+                 <td>
+                     @foreach(var item1 in item.Flights){
+                    <partial name="_DetailsFlight" model="item1">
+
+                    </partial>
+                     }
+                     </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
                 @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |

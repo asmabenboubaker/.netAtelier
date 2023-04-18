@@ -17,7 +17,7 @@ namespace AM.UI.web.Controllers
         public ActionResult Index()
         {
 
-            var list = servicePlane.GetAll();
+            var list = servicePlane.GetAll().ToList();
             return View(list);
         }
 

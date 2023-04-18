@@ -20,8 +20,8 @@ namespace AM.applicationCore
         
         public int Size { get; set; }
         public virtual Plane PlaneFK { get; set; }
-        public List<Reservation> reservation { get; set; }
+        public virtual List<Reservation> reservation { get; set; }
         public int SectionFK { get; set; }
-        public Section Section { get; set; }
+        public virtual Section Section { get; set; }
     }
 }

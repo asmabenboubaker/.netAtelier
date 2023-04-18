@@ -24,7 +24,7 @@ namespace AM.UI.Console
         {
             optionsBuilder.UseSqlServer(@"data source=(localdb)\mssqllocaldb;" +
                 "initial catalog=asmabenboubaker; integrated security=true");
-            //optionsBuilder.UseLazyLoadingProxies();
+            optionsBuilder.UseLazyLoadingProxies();
         }
         
         //configuration Fluent API

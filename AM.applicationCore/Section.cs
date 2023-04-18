@@ -14,6 +14,6 @@ namespace AM.applicationCore
         [Required(ErrorMessage = "The Name field is required.")]
         [MinLength(1, ErrorMessage = "The Name field must have at least 1 character.")]
         public string Name { get; set; }
-        public List<Seat> Seats { get; set; }
+        public virtual List<Seat> Seats { get; set; }
     }
 }

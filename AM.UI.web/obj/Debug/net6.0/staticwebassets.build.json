@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "XBLwsoRtT6A4kyGoPi4s/36YdBNMTGY+aFYELbIjvoU=",
+  "Hash": "95YJASA42KsZV96jMpunjbOX8LfpyJjVlrhXUfffYLE=",
   "Source": "AM.UI.web",
   "BasePath": "_content/AM.UI.web",
   "Mode": "Default",
@@ -1103,6 +1103,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\NewFolder\\card-big-03.png"
+    },
+    {
+      "Identity": "D:\\4twin\\s2\\.net\\Atelier\\AM.UI.web\\wwwroot\\NewFolder\\card-big-05.png",
+      "SourceId": "AM.UI.web",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\4twin\\s2\\.net\\Atelier\\AM.UI.web\\wwwroot\\",
+      "BasePath": "_content/AM.UI.web",
+      "RelativePath": "NewFolder/card-big-05.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\NewFolder\\card-big-05.png"
     }
   ]
 }

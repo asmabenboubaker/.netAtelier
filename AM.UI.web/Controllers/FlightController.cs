@@ -21,7 +21,7 @@ namespace AM.UI.web.Controllers
         public ActionResult Index(string destination)
         {
 
-            var list = IserviceFlight.GetAll();
+            var list = IserviceFlight.GetAll().ToList();
             if (destination != null) {
             list=list.Where(f => f.Destination.Contains(destination)).ToList();
             }
@@ -48,10 +48,14 @@ namespace AM.UI.web.Controllers
         {
             try
             {
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "NewFolder",piloteFile.FileName);
-                var stream = new FileStream(path, FileMode.Create);
-                piloteFile.CopyTo(stream);
-                collection.Pilote = piloteFile.FileName;
+                if(piloteFile!=null)
+                {
+                    var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "NewFolder", piloteFile.FileName);
+                    var stream = new FileStream(path, FileMode.Create);
+                    piloteFile.CopyTo(stream);
+                    collection.Pilote = piloteFile.FileName;
+                }
+                
                 IserviceFlight.Add(collection);
                 IserviceFlight.Commit();
                 return RedirectToAction(nameof(Index));
@@ -66,16 +70,21 @@ namespace AM.UI.web.Controllers
         // GET: FlightController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var flight = IserviceFlight.GetById(id);
+            ViewBag.Planes = new SelectList(servicePlane.GetAll(), "PlaneId","Information");
+            return View(flight);
+
         }
 
         // POST: FlightController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Flight collection)
         {
             try
             {
+                IserviceFlight.Update(collection);
+                IserviceFlight.Commit();
                 return RedirectToAction(nameof(Index));
             }
             catch

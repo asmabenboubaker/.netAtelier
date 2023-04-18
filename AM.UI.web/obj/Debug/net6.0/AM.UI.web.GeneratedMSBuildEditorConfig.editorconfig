@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/4twin/s2/.net/Atelier/AM.UI.web/Views/Flight/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0XEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/4twin/s2/.net/Atelier/AM.UI.web/Views/Flight/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRmxpZ2h0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,6 +46,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/4twin/s2/.net/Atelier/AM.UI.web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/4twin/s2/.net/Atelier/AM.UI.web/Views/Shared/_DetailsFlight.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EZXRhaWxzRmxpZ2h0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/4twin/s2/.net/Atelier/AM.UI.web/Views/Shared/_DetailsPlane.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EZXRhaWxzUGxhbmUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/4twin/s2/.net/Atelier/AM.UI.web/Views/Shared/_ValidationScriptsPartial.cshtml]

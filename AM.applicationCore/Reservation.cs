@@ -15,7 +15,7 @@ namespace AM.applicationCore
         public int PassengerFK { get; set; }
         public DateTime DateReservation { get; set; }
 
-        public Seat seat { get; set; }
-        public Passenger passenger { get; set; }
+        public virtual Seat seat { get; set; }
+        public virtual Passenger passenger { get; set; }
     }
 }
