@@ -18,8 +18,7 @@ namespace AM.Infrastructure.confi
             builder.HasKey(f => f.FlightId);
             builder.ToTable("vols ");
             // relation one to many 
-            builder.HasOne(f => f.Planee)
-                .WithMany(p => p.Flights)
+            builder.HasOne(f => f.Planee).WithMany(p => p.Flights)
 
                 .HasForeignKey(f => f.PlaneId)
             .OnDelete(DeleteBehavior.SetNull);

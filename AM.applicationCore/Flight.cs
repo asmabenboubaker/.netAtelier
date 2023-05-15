@@ -15,6 +15,7 @@ namespace AM.applicationCore
         public string Departure { get; set; }
         public DateTime FightDate { get; set; }
 
+        
         public int FlightId { get; set; }
         public DateTime EffectiveArrival { get; set; }
         public int EstimatedDuration { get; set; }
